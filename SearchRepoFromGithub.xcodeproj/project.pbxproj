@@ -11,6 +11,7 @@
 		5C4C7CCB27AE592000B265D2 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C7CCA27AE592000B265D2 /* ResultView.swift */; };
 		5C4C7CCD27AE595100B265D2 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C7CCC27AE595100B265D2 /* ResultViewModel.swift */; };
 		5C4C7CCF27AE596F00B265D2 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C7CCE27AE596F00B265D2 /* RepositoryModel.swift */; };
+		5C4C7CD127AEAD4200B265D2 /* RepositoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4C7CD027AEAD4200B265D2 /* RepositoryView.swift */; };
 		5CC281B227AE567000F230BF /* SearchRepoFromGithubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC281B127AE567000F230BF /* SearchRepoFromGithubApp.swift */; };
 		5CC281B427AE567000F230BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC281B327AE567000F230BF /* ContentView.swift */; };
 		5CC281B627AE567000F230BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC281B527AE567000F230BF /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		5C4C7CCA27AE592000B265D2 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		5C4C7CCC27AE595100B265D2 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		5C4C7CCE27AE596F00B265D2 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		5C4C7CD027AEAD4200B265D2 /* RepositoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryView.swift; sourceTree = "<group>"; };
 		5CC281AE27AE567000F230BF /* SearchRepoFromGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchRepoFromGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC281B127AE567000F230BF /* SearchRepoFromGithubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepoFromGithubApp.swift; sourceTree = "<group>"; };
 		5CC281B327AE567000F230BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C4C7CD227AEAD4700B265D2 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				5C4C7CCA27AE592000B265D2 /* ResultView.swift */,
+				5C4C7CCC27AE595100B265D2 /* ResultViewModel.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		5C4C7CD327AEAD9E00B265D2 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				5C4C7CC827AE58FB00B265D2 /* SearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		5C4C7CD427AEB55900B265D2 /* RepositoryViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5C4C7CD027AEAD4200B265D2 /* RepositoryView.swift */,
+				5C4C7CCE27AE596F00B265D2 /* RepositoryModel.swift */,
+			);
+			path = RepositoryViewModel;
+			sourceTree = "<group>";
+		};
 		5CC281A527AE567000F230BF = {
 			isa = PBXGroup;
 			children = (
@@ -104,10 +132,9 @@
 			children = (
 				5CC281B127AE567000F230BF /* SearchRepoFromGithubApp.swift */,
 				5CC281B327AE567000F230BF /* ContentView.swift */,
-				5C4C7CC827AE58FB00B265D2 /* SearchView.swift */,
-				5C4C7CCA27AE592000B265D2 /* ResultView.swift */,
-				5C4C7CCC27AE595100B265D2 /* ResultViewModel.swift */,
-				5C4C7CCE27AE596F00B265D2 /* RepositoryModel.swift */,
+				5C4C7CD327AEAD9E00B265D2 /* SearchView */,
+				5C4C7CD227AEAD4700B265D2 /* Result */,
+				5C4C7CD427AEB55900B265D2 /* RepositoryViewModel */,
 				5CC281B527AE567000F230BF /* Assets.xcassets */,
 				5CC281B727AE567000F230BF /* Preview Content */,
 			);
@@ -270,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CC281B427AE567000F230BF /* ContentView.swift in Sources */,
+				5C4C7CD127AEAD4200B265D2 /* RepositoryView.swift in Sources */,
 				5C4C7CCD27AE595100B265D2 /* ResultViewModel.swift in Sources */,
 				5C4C7CCB27AE592000B265D2 /* ResultView.swift in Sources */,
 				5C4C7CCF27AE596F00B265D2 /* RepositoryModel.swift in Sources */,

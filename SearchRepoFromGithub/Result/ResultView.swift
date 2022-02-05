@@ -11,18 +11,17 @@ struct ResultView: View {
     @State var item: String
     @StateObject var viewModel = ResultViewModel()
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("\(item) SearchResult")
-                .padding(.leading)
+        NavigationView {
             if viewModel.alertFlg == false {
                 List {
                     ForEach(viewModel.repo, id: \.self) { repo in
-                        Text(repo.name)
+                        RepositoryView(repository: repo)
                     }
                 }
                 .alert("アラート", isPresented: $viewModel.alertFlg, actions: {})
             }
         }
+        .navigationTitle("SearchResult \(item)")
         .task {
             await viewModel.fetch(item: item)
         }

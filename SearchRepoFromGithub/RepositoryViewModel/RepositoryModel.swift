@@ -20,6 +20,10 @@ struct Response: Codable{
 
 struct Repository: Codable, Hashable {
     let name: String
+    let owner: Avatar_url
+    let html_url: String
 }
 
-
+struct Avatar_url: Codable, Hashable {
+    let avatar_url: String
+}

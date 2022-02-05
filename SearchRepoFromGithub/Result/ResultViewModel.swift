@@ -14,12 +14,14 @@ actor ResultViewModel: ObservableObject {
     
     func fetch(item: String) async {
         do {
+//            let result = try await decode(data: httpGet(item: item))
+//            ひとつにできる?。分けると↓
             let data = try await httpGet(item: item)
             let result = try await decode(data: data)
+            
             await MainActor.run { [weak self] in
                 self?.repo = result
             }
-            print(result)
         } catch let error{
             self.message = error
             await MainActor.run { [weak self] in
@@ -36,7 +38,7 @@ actor ResultViewModel: ObservableObject {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         let (data, _) = try await URLSession.shared.data(for: request)
-        
+        print(data)
         return data
     }
     func decode(data: Data) async throws -> [Repository]{
@@ -45,5 +47,8 @@ actor ResultViewModel: ObservableObject {
             throw Errors.decodingError
         }
         return decoded.items
+    }
+    func ImageDownloader() {
+        
     }
 }
