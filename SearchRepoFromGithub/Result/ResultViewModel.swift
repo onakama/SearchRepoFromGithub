@@ -9,26 +9,15 @@ import Foundation
 
 actor ResultViewModel: ObservableObject {
     @MainActor @Published var repo: [Repository] = []
-    @MainActor @Published var alertFlg = false
-    var message: Error?
     
-    func fetch(item: String) async {
-        do {
-//            let result = try await decode(data: httpGet(item: item))
-//            ひとつにできる?。分けると↓
-            let data = try await httpGet(item: item)
-            let result = try await decode(data: data)
-            
-            await MainActor.run { [weak self] in
-                self?.repo = result
-            }
-        } catch let error{
-            self.message = error
-            await MainActor.run { [weak self] in
-                self?.alertFlg = true
-            }
-            print(error)
+    func fatch(item: String) async throws {
+        let data = try await httpGet(item: item)
+        let result = try await decode(data: data)
+        
+        await MainActor.run { [weak self] in
+            self?.repo = result
         }
+        
     }
     
     func httpGet(item: String) async throws -> Data {

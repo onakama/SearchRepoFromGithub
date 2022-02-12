@@ -9,21 +9,28 @@ import SwiftUI
 
 struct ResultView: View {
     @State var item: String
+    @State private var errorFlg: Bool = false
+    @State var errorMessage: Error?
     @StateObject var viewModel = ResultViewModel()
     var body: some View {
         NavigationView {
-            if viewModel.alertFlg == false {
-                List {
-                    ForEach(viewModel.repo, id: \.self) { repo in
-                        RepositoryView(repository: repo)
-                    }
+            List {
+                ForEach(viewModel.repo, id: \.self) { repo in
+                    RepositoryView(repository: repo)
                 }
-                .alert("アラート", isPresented: $viewModel.alertFlg, actions: {})
             }
+            .alert("アラート", isPresented: $errorFlg, actions: {})
         }
         .navigationTitle("SearchResult \(item)")
         .task {
-            await viewModel.fetch(item: item)
+            do {
+                try await viewModel.fatch(item: item)
+            } catch let error{
+                self.errorFlg = true
+                self.errorMessage = error
+                print(error)
+            }
+
         }
     }
 }

@@ -16,7 +16,7 @@ struct SearchView: View {
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 NavigationLink(destination: ResultView(item: item)) {
                     Text("Search Repository")
-                }
+                }.disabled(item.isEmpty)
             }
         }
     }
